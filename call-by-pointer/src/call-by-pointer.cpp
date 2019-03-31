@@ -1,6 +1,6 @@
 //============================================================================
 // Name        : call-by-pointer.cpp
-// Author      : VEF Academy
+// Author      : Kien Nguyen
 // Version     :
 // Copyright   : Your copyright notice
 // Description : Hello World in C++, Ansi-style
