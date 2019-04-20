@@ -1,3 +1,11 @@
+//============================================================================
+// Name        : hw3_pb1_rotate_img.cpp
+// Author      : VEF Academy
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Rotate matrix 90 degree (in place)
+//============================================================================
+
 #include <iostream>
 #include <vector>
 #include <cmath>

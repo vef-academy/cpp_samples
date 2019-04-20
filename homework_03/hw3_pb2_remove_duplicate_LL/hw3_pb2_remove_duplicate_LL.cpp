@@ -1,9 +1,9 @@
 //============================================================================
-// Name        : hw3_pb2.cpp
+// Name        : hw3_pb2_remove_duplicate_LL.cpp
 // Author      : VEF Academy
 // Version     :
 // Copyright   : Your copyright notice
-// Description :
+// Description : Remove duplicate in linked list
 //============================================================================
 
 #include <iostream>
