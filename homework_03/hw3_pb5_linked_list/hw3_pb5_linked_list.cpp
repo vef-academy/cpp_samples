@@ -26,6 +26,7 @@ class SLList
 {
   private:
     SLNode *head;
+    SLNode* reverse_recursion_prv(SLNode *node);
 
   public:
     SLList(SLNode *h = NULL) : head(h){};
@@ -58,7 +59,8 @@ class SLList
     void print();
 
     // reverse
-    void reverse();
+    void reverse_iterative();
+    void reverse_recursion();
 };
 
 bool SLList::isEmpty()
@@ -282,22 +284,36 @@ Step 1:
 Step 2:
     Update head
  */
-void SLList::reverse(){
+void SLList::reverse_iterative(){
     if(!isEmpty()){
         SLNode * cur = head;
         SLNode * pre = NULL;
         SLNode * next = NULL;
         while(cur != NULL){
             next = cur->next;
-            cur->next = pre; // update reverse pointer
+            cur->next = pre; // link the cur to pre
             pre = cur;
             cur = next;
         }
         head = pre;
     }
-
 }
 
+void SLList::reverse_recursion(){
+    SLNode * node = reverse_recursion_prv(head);
+    node->next = NULL;
+}
+
+SLNode* SLList::reverse_recursion_prv(SLNode *node){
+    if(node->next == NULL){ // node is tail
+        head = node;   // fix head pointer 
+        return node;
+    }else{
+        SLNode * tmp = reverse_recursion_prv(node->next);
+        tmp->next = node; // link the rest to curent node
+        return node; 
+    }
+}
 void sampleApp()
 {
     SLList myList;
@@ -366,7 +382,8 @@ void sampleApp()
 
     // Reverse
     cout << "reverse linked list" << endl;
-    myList.reverse();
+    myList.reverse_iterative();
+    // myList.reverse_recursion();
     myList.print();
 
     // empty list
